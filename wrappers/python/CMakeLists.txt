@@ -215,7 +215,7 @@ target_include_directories(pyrealsense2 PRIVATE ../../src)
 
 if(BUILD_NETWORK_DEVICE)
     pybind11_add_module(pyrealsense2-net SHARED pyrs_net.cpp)
-    target_link_libraries(pyrealsense2-net PRIVATE realsense2-net)
+    target_link_libraries(pyrealsense2-net PRIVATE realsense2-net ${DEPENDENCIES})
     set_target_properties(pyrealsense2-net PROPERTIES FOLDER Wrappers/python)
     set_target_properties(pyrealsense2-net PROPERTIES
         VERSION     ${REALSENSE_VERSION_STRING}
